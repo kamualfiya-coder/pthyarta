@@ -857,3 +857,60 @@ body {
   .contact-grid { flex-direction: column; }
   .contact-divider { width: 60%; height: 1px; margin: 0 auto; }
 }
+/* ===== MOBILE FONT SIZES (max 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .teks1 { font-size: clamp(28px, 8vw, 42px); letter-spacing: 1px; }
+  .teks2 { font-size: 13px; line-height: 1.7; }
+  .hero-badge { font-size: 10px; letter-spacing: 3px; }
+  .hero-cta { font-size: 12px; padding: 0.65rem 1.5rem; }
+
+  /* Nav brand */
+  .nav-brand { font-size: 22px; }
+
+  /* Section labels */
+  .section-tag { font-size: 10px; letter-spacing: 2px; }
+  .section-title { font-size: 26px; }
+
+  /* Halaman 2 - Tentang */
+  .teks3 { font-size: 18px; }
+  .teks3-sub { font-size: 14px; line-height: 1.7; }
+  .fotologo { width: 150px; }
+
+  /* Stat bar */
+  .stat-num { font-size: 34px; }
+  .stat-pct { font-size: 20px; }
+  .stat-label { font-size: 12px; letter-spacing: 0.5px; }
+
+  /* Halaman 3 - Visi Misi */
+  .halaman3 { padding: 3rem 1.25rem; }
+  .halaman3 .section h2 { font-size: 20px; }
+  .halaman3 .section p,
+  .halaman3 .section li { font-size: 14px; line-height: 1.8; }
+
+  /* Halaman 4 - Bidang Usaha */
+  .halaman4 { padding: 3rem 1.25rem; }
+  .judul { font-size: 20px; letter-spacing: 1px; }
+  .kartu-header { font-size: 13px; letter-spacing: 1px; }
+  .halaman4 .kartu-body li { font-size: 13px; }
+
+  /* Halaman 5 - Legalitas */
+  .halaman5 { padding: 3rem 1.25rem; }
+  .judul-halaman { font-size: 20px; letter-spacing: 1px; }
+  .halaman5 .kartu-body { font-size: 13px; }
+
+  /* Halaman 6 - Gedung */
+  .halaman6 { padding: 3rem 1.25rem; }
+  .teks-gedung { font-size: 14px; line-height: 1.8; }
+
+  /* Halaman 8 - Contact */
+  .halaman8 { padding: 3rem 1.25rem 0; }
+  .h1 { font-size: 22px; }
+  .h2 { font-size: 15px; }
+  .p { font-size: 13px; }
+  .contact-icon { font-size: 20px; }
+
+  /* Footer */
+  .footer-bar p { font-size: 11px; }
+}
