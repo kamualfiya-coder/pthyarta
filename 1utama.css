@@ -195,11 +195,10 @@ body {
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: none;
+  background: navy;
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: navy;
 }
 .hamburger span {
   display: block;
