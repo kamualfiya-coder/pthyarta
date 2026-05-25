@@ -303,6 +303,25 @@ body {
   transform: none;
 }
 
+/* ======= LAYOUT DUA KOLOM (EVENT KIRI, PROMO KANAN) ======= */
+.promo-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.promo-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .promo-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ======= RESPONSIVE ======= */
 @media (max-width: 768px) {
   .promo-hero { padding: 6rem 2rem 3rem; }
