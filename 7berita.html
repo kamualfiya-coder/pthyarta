@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Berita – Mall Dinoyo City</title>
+  <link rel="stylesheet" href="mdc-berita.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ======= NAVBAR MALL DINOYO — isi sendiri di sini ======= -->
+
+
+  <!-- ======= HERO ======= -->
+  <section class="berita-hero">
+    <div class="berita-hero-content">
+      <span class="section-tag reveal">Terkini</span>
+      <h1 class="berita-hero-title reveal">Berita</h1>
+      <p class="berita-hero-sub reveal">Informasi terkini seputar Mall Dinoyo City</p>
+    </div>
+  </section>
+
+  <!-- ======= KONTEN ======= -->
+  <div class="berita-wrap">
+    <div class="daftar-kartu">
+
+      <!-- =====================================================
+           KARTU BERITA — copy blok <a>…</a> untuk tambah berita
+           Urutkan dari terbaru ke terlama (atas ke bawah)
+           Maks 10 per halaman, lalu buat mdc-berita-p2.html
+      ====================================================== -->
+
+      <!-- KARTU BERITA 1 -->
+      <a href="https://kumparan.com/seputar-malang/ada-apa-saja-di-mall-dinoyo-city-malang-cek-di-sini-sebelum-ke-sana-24MHCnG4ILR" target="_blank" class="kartu-berita reveal">
+        <div class="kartu-kiri">
+          <div class="kartu-tanggal-blok">
+            <span class="tgl-hari">23</span>
+            <span class="tgl-bulan">Jan 2025</span>
+          </div>
+        </div>
+        <div class="kartu-kanan">
+          <div class="kartu-meta">
+            <span class="badge-kategori">Mall Dinoyo City</span>
+          </div>
+          <div class="kartu-judul">Ada Apa Saja di Mall Dinoyo City Malang? Cek di Sini Sebelum ke Sana</div>
+          <div class="kartu-ringkasan">
+            Ada apa saja di Mall Dinoyo City Malang? Beragam tempat menarik bisa 
+            ditemukan di sini, seperti bioskop dan berbagai tenant pilihan.
+          </div>
+          <div class="kartu-footer">Baca selengkapnya →</div>
+        </div>
+      </a>
+
+      <!-- KARTU BERITA 2 -->
+      <a href="https://timesindonesia.co.id/peristiwa-daerah/576431/festival-thrift-di-mall-dinoyo-hadirkan-surga-fashion-berkualitas" target="_blank" class="kartu-berita reveal">
+        <div class="kartu-kiri">
+          <div class="kartu-tanggal-blok">
+            <span class="tgl-hari">03</span>
+            <span class="tgl-bulan">Feb 2026</span>
+          </div>
+        </div>
+        <div class="kartu-kanan">
+          <div class="kartu-meta">
+            <span class="badge-kategori">Event</span>
+            <span class="badge-baru">● Baru</span>
+          </div>
+          <div class="kartu-judul">Festival Thrift di Mall Dinoyo Hadirkan Surga Fashion Berkualitas</div>
+          <div class="kartu-ringkasan">
+            Event thrift Trendvault Vaganza yang diikuti 40 tenant menjadi wadah untuk kreativitas, 
+            hobi, serta kolaborasi komunitas yang sedang berkembang di Kota Malang.
+          </div>
+          <div class="kartu-footer">Baca selengkapnya →</div>
+        </div>
+      </a>
+
+      <!-- =====================================================
+           TEMPLATE — hapus komentar untuk tambah berita baru
+      ======================================================
+      <a href="LINK_ARTIKEL" target="_blank" class="kartu-berita reveal">
+        <div class="kartu-kiri">
+          <div class="kartu-tanggal-blok">
+            <span class="tgl-hari">DD</span>
+            <span class="tgl-bulan">MMM YYYY</span>
+          </div>
+        </div>
+        <div class="kartu-kanan">
+          <div class="kartu-meta">
+            <span class="badge-kategori">KATEGORI</span>
+          </div>
+          <div class="kartu-judul">JUDUL BERITA</div>
+          <div class="kartu-ringkasan">RINGKASAN SINGKAT BERITA.</div>
+          <div class="kartu-footer">Baca selengkapnya →</div>
+        </div>
+      </a>
+      -->
+
+      <!-- JIKA BELUM ADA BERITA — hapus komentar di bawah, hapus kartu di atas
+      <div class="kosong reveal">
+        <div class="kosong-icon">📰</div>
+        <p>Belum ada berita.</p>
+        <p>Pantau terus untuk update terbaru.</p>
+      </div>
+      -->
+
+    </div><!-- end daftar-kartu -->
+
+    <!-- ======= PAGINATION ======= -->
+    <div class="pagination">
+      <a href="mdc-berita.html" class="pag-btn active">1</a>
+      <!-- <a href="mdc-berita-p2.html" class="pag-btn">2</a> -->
+    </div>
+
+  </div><!-- end berita-wrap -->
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Scroll top
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('show', window.scrollY > 400);
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+</body>
+</html>
