@@ -1,0 +1,307 @@
+/* ============================================================
+   mdc-berita.css — Halaman Berita Mall Dinoyo City
+   Layout: 1 kolom penuh, tema navy + gold
+   ============================================================ */
+
+/* ======= CSS VARS ======= */
+:root {
+  --navy: #07133a;
+  --gold: #e8a020;
+  --cream: #f8f6f1;
+  --white: #ffffff;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.25s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  background: var(--cream);
+  color: #222;
+}
+
+/* ======= HERO ======= */
+.berita-hero {
+  min-height: 45vh;
+  background:
+    linear-gradient(135deg, rgba(7,19,58,0.82) 0%, rgba(7,19,58,0.55) 100%),
+    url("mdc.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.berita-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(232,160,32,0.09) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.berita-hero-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.berita-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 56px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.berita-hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* ======= WRAPPER KONTEN ======= */
+.berita-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+/* ======= DAFTAR KARTU ======= */
+.daftar-kartu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ======= KARTU BERITA ======= */
+.kartu-berita {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid #e8e5de;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.kartu-berita:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(7,19,58,0.1);
+}
+
+.kartu-berita:hover .kartu-kiri { background: var(--gold); }
+.kartu-berita:hover .kartu-kiri .tgl-hari,
+.kartu-berita:hover .kartu-kiri .tgl-bulan { color: var(--navy); }
+
+/* ======= SISI KIRI (tanggal) ======= */
+.kartu-kiri {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1.1rem;
+  min-width: 72px;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+
+.kartu-tanggal-blok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.tgl-hari {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  transition: color var(--transition);
+}
+
+.tgl-bulan {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+/* ======= SISI KANAN (isi) ======= */
+.kartu-kanan {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.kartu-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.kartu-judul {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.kartu-ringkasan {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.75;
+}
+
+.kartu-footer {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  margin-top: 0.25rem;
+}
+
+/* ======= BADGE ======= */
+.badge-kategori {
+  background: rgba(7,19,58,0.07);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(7,19,58,0.12);
+}
+
+.badge-baru {
+  background: rgba(232,160,32,0.12);
+  color: #8a6000;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(232,160,32,0.3);
+}
+
+/* ======= PAGINATION ======= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pag-btn {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid rgba(7,19,58,0.2);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  transition: all var(--transition);
+  background: white;
+}
+
+.pag-btn:hover,
+.pag-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.pag-btn.active { pointer-events: none; }
+
+/* ======= KOSONG ======= */
+.kosong {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #aaa;
+  background: white;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kosong-icon { font-size: 40px; margin-bottom: 0.4rem; }
+.kosong p { font-size: 15px; line-height: 1.8; margin: 0; }
+
+/* ======= SCROLL TOP ======= */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 42px;
+  height: 42px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 50;
+}
+
+.scroll-top.show { opacity: 1; }
+
+/* ======= REVEAL ANIMATION ======= */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .berita-hero { padding: 6rem 2rem 3rem; }
+  .berita-wrap { padding: 3rem 1.25rem 4rem; }
+
+  .kartu-berita { flex-direction: column; }
+  .kartu-kiri {
+    min-width: unset;
+    padding: 0.75rem 1.25rem;
+  }
+  .kartu-tanggal-blok {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .tgl-hari { font-size: 22px; }
+}
