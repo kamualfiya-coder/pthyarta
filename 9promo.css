@@ -1,7 +1,7 @@
 /* ============================================================
    mdc-promo.css — Halaman Promo & Event Mall Dinoyo City
-   Layout: 2 seksi (Event atas, Promo bawah), grid 3 kolom
-   Thumbnail foto → klik buka Instagram
+   Layout: 2 kolom berdampingan (Event kiri, Promo kanan)
+   Kartu susun ke bawah maks 3 per kolom
    ============================================================ */
 
 /* ======= CSS VARS ======= */
@@ -27,7 +27,7 @@ body {
   min-height: 45vh;
   background:
     linear-gradient(135deg, rgba(7,19,58,0.82) 0%, rgba(7,19,58,0.55) 100%),
-    url("mdc.png") center / cover no-repeat;
+    url("mdc.jpg") center / cover no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 6rem 5rem 4rem;
@@ -83,6 +83,19 @@ body {
   padding: 4rem 2rem 5rem;
 }
 
+/* ======= LAYOUT DUA KOLOM ======= */
+.promo-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.promo-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* ======= SECTION HEADER ======= */
 .promo-section-header {
   display: flex;
@@ -125,10 +138,10 @@ body {
   flex-shrink: 0;
 }
 
-/* ======= GRID ======= */
+/* ======= GRID — 1 kolom ke bawah ======= */
 .promo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
@@ -303,34 +316,15 @@ body {
   transform: none;
 }
 
-/* ======= LAYOUT DUA KOLOM (EVENT KIRI, PROMO KANAN) ======= */
-.promo-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-.promo-column {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 768px) {
+/* ======= RESPONSIVE ======= */
+@media (max-width: 900px) {
   .promo-columns {
     grid-template-columns: 1fr;
   }
 }
 
-/* ======= RESPONSIVE ======= */
 @media (max-width: 768px) {
   .promo-hero { padding: 6rem 2rem 3rem; }
   .promo-wrap { padding: 2.5rem 1.25rem 4rem; }
   .promo-section-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-}
-
-@media (max-width: 600px) {
-  .promo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  .kartu-info { padding: 0.7rem 0.85rem 0.8rem; }
-  .kartu-caption { font-size: 15px; }
 }
