@@ -1,0 +1,317 @@
+/* ============================================================
+   mdc-promo.css — Halaman Promo & Event Mall Dinoyo City
+   Layout: 2 seksi (Event atas, Promo bawah), grid 3 kolom
+   Thumbnail foto → klik buka Instagram
+   ============================================================ */
+
+/* ======= CSS VARS ======= */
+:root {
+  --navy: #07133a;
+  --gold: #e8a020;
+  --cream: #f8f6f1;
+  --white: #ffffff;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.25s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  background: var(--cream);
+  color: #222;
+}
+
+/* ======= HERO ======= */
+.promo-hero {
+  min-height: 45vh;
+  background:
+    linear-gradient(135deg, rgba(7,19,58,0.82) 0%, rgba(7,19,58,0.55) 100%),
+    url("mdc.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(232,160,32,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.promo-hero-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.promo-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 56px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.promo-hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* ======= WRAPPER KONTEN ======= */
+.promo-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+/* ======= SECTION HEADER ======= */
+.promo-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.promo-section-judul {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.ig-link-akun {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  opacity: 0.55;
+  transition: opacity var(--transition), color var(--transition);
+}
+
+.ig-link-akun:hover {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.ig-link-akun svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ======= GRID ======= */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ======= KARTU ======= */
+.kartu-promo {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid #e8e5de;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.kartu-promo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(7,19,58,0.12);
+}
+
+/* ======= THUMBNAIL ======= */
+.kartu-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #e8e5de;
+}
+
+.kartu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.kartu-promo:hover .kartu-thumb img {
+  transform: scale(1.04);
+}
+
+.kartu-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,19,58,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.kartu-promo:hover .kartu-thumb-overlay { opacity: 1; }
+
+.kartu-thumb-overlay svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.kartu-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #f0ede7;
+  color: #bbb;
+  font-size: 13px;
+}
+
+.kartu-thumb-placeholder svg {
+  width: 32px;
+  height: 32px;
+  opacity: 0.35;
+}
+
+/* ======= INFO BAWAH FOTO ======= */
+.kartu-info {
+  padding: 0.9rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.kartu-badge { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.badge-promo {
+  background: rgba(232,160,32,0.12);
+  color: #8a6000;
+  border: 1px solid rgba(232,160,32,0.3);
+}
+
+.badge-event {
+  background: rgba(7,19,58,0.07);
+  color: var(--navy);
+  border: 1px solid rgba(7,19,58,0.12);
+}
+
+.badge-tenant {
+  background: rgba(26,107,42,0.08);
+  color: #1a6b2a;
+  border: 1px solid rgba(26,107,42,0.2);
+}
+
+.badge-info {
+  background: rgba(139,26,26,0.07);
+  color: #8b1a1a;
+  border: 1px solid rgba(139,26,26,0.15);
+}
+
+.kartu-caption {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.kartu-tanggal {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.kartu-ig-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-top: 0.1rem;
+}
+
+/* ======= SCROLL TOP ======= */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 42px;
+  height: 42px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 50;
+}
+
+.scroll-top.show { opacity: 1; }
+
+/* ======= REVEAL ANIMATION ======= */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .promo-hero { padding: 6rem 2rem 3rem; }
+  .promo-wrap { padding: 2.5rem 1.25rem 4rem; }
+  .promo-section-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+}
+
+@media (max-width: 600px) {
+  .promo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .kartu-info { padding: 0.7rem 0.85rem 0.8rem; }
+  .kartu-caption { font-size: 15px; }
+}
